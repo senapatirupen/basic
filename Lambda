@@ -1,0 +1,51 @@
+() -> 3.14
+
+Lambda expression ->
+functional interfaces
+generic functional interfaces
+Lambda expression as an argument
+
+Example1:
+interface MyNumber {
+    int getValue();
+}
+
+interace Calculation {
+    int getCalc(int a, int b);
+}
+
+interface SumFunc<T> {
+    T func(T t);
+}
+
+interface CalcLenght(){
+    String getLenght(String a);
+}
+
+public class MyNumberImpl {
+   MyNumber myNumber;
+   myNumber = () -> return 3.14;
+   System.out.println(myNumber.getValue());
+   
+   Calculation calculation;
+   calculation = (int a, int b) -> {
+       if(a < b)
+           return a;
+       else
+           return b;
+   }
+   
+   SumFun<String> strLenght = (str) -> {
+       return str.reverse();
+   }
+   
+   public int lenghtCalc(CalcLength cl, String x){
+        return c1.getLenght(x);
+   }
+   
+   public static void main(String[] args){
+       New MyNumberImpl().lengthCalc((str) -> {
+           return str.length();
+       }, str);
+   }
+}
