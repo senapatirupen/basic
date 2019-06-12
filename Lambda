@@ -1,3 +1,10 @@
+Lambda Expressions
+> Adding of generics
+> Lambda Expressions
+
+Added by JDK 8, lambda expressions significantly enhanced java because of two primary reasons. First, they added new syntax elements that increased the expressive power of the language. In the process, they streamlined the way that certain common constructs are implemented. Second, the addition of lambda expressions resulted in new capabilities being incorporated into the API library. Among these new capabilities are the ability to more easily take advantage of the parallel processing capapabilities of multicore environments, especially as it related to the handling of for-each style operations, and the new stream API, which supports pipeline operations on data. The addition of lambda expressions also provided the catalyst for other new java features, including the default method, which lets you defice default behavior for an interface method, and the method reference, which lets you refer to a method without executing it.
+In the final analysis, in much the same way that generics reshaped Java serveral years ago, lamda expressions continue to reshape Java today. Simply put, lambda expressions will impach virtually all Java programmmers. They truly are that important.
+
 () -> 3.14
 
 Lambda expression ->
