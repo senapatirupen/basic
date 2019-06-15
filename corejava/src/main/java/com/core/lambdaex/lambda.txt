@@ -1,0 +1,52 @@
+Lambda Expressions
+> Adding of generics
+> Lambda Expressions
+
+Added by JDK 8, lambda expressions significantly enhanced java because of two primary reasons. First, they added new syntax elements that increased the expressive power of the language. In the process, they streamlined the way that certain common constructs are implemented. Second, the addition of lambda expressions resulted in new capabilities being incorporated into the API library. Among these new capabilities are the ability to more easily take advantage of the parallel processing capapabilities of multicore environments, especially as it related to the handling of for-each style operations, and the new stream API, which supports pipeline operations on data. The addition of lambda expressions also provided the catalyst for other new java features, including the default method, which lets you defice default behavior for an interface method, and the method reference, which lets you refer to a method without executing it.
+In the final analysis, in much the same way that generics reshaped Java serveral years ago, lamda expressions continue to reshape Java today. Simply put, lambda expressions will impach virtually all Java programmmers. They truly are that important.
+
+A lambda expression is, essentially, an anonymous(tha is, unnamed) method. However, this method is not executed on its own. Instead, it is used to implement a method defined by a functional interface. Thus a lambda expression results in a form of anonymous class. Lambda expressions are also commonly referred to as closures.
+
+A functional interface is an interface that contains one and only one abstract method.
+
+The lambda expression introduced a new syntax element and operator into the Java language. The new operator, sometimes reffered to as the lambda operator or the arrow operator, is ->. It divides a lambda expression into two parts. The left side specifies any parameters required by the lambda expression. On the right side is the lambda body, which specifies the actions of the lambda expression.
+
+The lambda expression is simply a constant expression. When it is assigned to myNum, a class instance is constructed in which the lambda expression implements the getValue() method in MyNumber.
+
+> Single line Lambda expression
+> Block Lambda expression
+> Functional Interface
+> Generic Functional Interface
+> Passing Lambda expression as an argument
+> Lambda Expressions and Exceptions
+> Lambda Expressions and Variable Capture
+> Method References
+> Method References to static methods
+> Method References to instance methods
+> Constructor References
+
+As explained eariler, a lambda expression can be used in any context that provides a target type. One of these is when a lambda expression is passed as an argument. In fact passing a lambda expression as an argument is a common use of lambdas. Moreover, it is a very powerful use because it gives you a way to pass executable code as an argument to a method.
+
+A Lambda expression can throw an exception. However, it if throws a checked exception, then that exception must be compatible with the exception(s) listed in the throws clause of the abstract method in the functional interface.
+
+However, when a lambda	expression uses	a	local 	variable	from	i t s	enclosing
+scope,	a special 	si tuat ion	is	created	that 	i s	referred	to	as	a	variable	capture.	In
+thi s	case,	a	lambda	expression	may	only	use	local 	variables	that 	are	ef fect ively
+f inal . An	effect ively	final  variable	i s	one	whose	value	does	not 	change	after	i t
+i s	first 	assigned.	There	i s	no	need	to	expl ici t ly	declare	such	a	variable	as	final ,
+al though	doing	so	would	not 	be	an	error.	(The	thi s	parameter	of	an	enclosing
+scope is	automat ical ly	effect ively	final ,	and	lambda	expressions	do	not 	have	a
+thi s of	thei r	own.)
+It 	is	important 	to	understand	that 	a	local 	variable	of	the	enclosing	scope
+cannot be	modi fied	by	the	lambda	expression.	Doing	so	would	remove	i t s
+effectively	final 	status,	thus	rendering	i t 	i l legal 	for	capture.
+
+It 	is	important 	to	emphasize	that 	a	lambda	expression	can	use	and	modi fy	an
+instance variable	from	i t s	invoking	class.	It 	just 	can’t 	use	a	local 	variable	of	i t s
+enclosing scope	unless	that 	variable	i s	effect ively	final .
+
+There is an important feature related to lambda expressions called the method reference. A method reference provides a way to a method without executing it. It related to lambda expressions because it, too requires a target type context that consists of a compatible functional interface. When exaluated, a method reference also creates an instance of the functional interface. 
+
+Method references to static Method
+To create a static method reference, use this general syntax:ClassName::methodName
+Notice that the class name is separated from the method name by a double colon. The :: is a separator that was added to Java by JDK 8 expressly for this purpose. This method reference can be used anywhere in which it is compatible with its target type.

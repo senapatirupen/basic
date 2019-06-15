@@ -1,0 +1,12 @@
+::   Colons used to create method or constructor reference
+...  Ellipsis Indicated a variable-arity parameter
+
+nested switch,
+Local	Variable	Type	Inference	 in	a	 for	Loop:
+JDK	10	introduced	a	feature	called	local 	variable
+type	inference,	which	allows	the	type	of	a	local 	variable	to	be	inferred	from	the
+type	of	its	initializer.	To	use	local 	variable	type	inference,	the	type	of	the
+variable	is	specified	as	var	and	the	variable	must 	be	initialized.	Local 	variable
+type	inference	can	be	used	in	a	for	loop	when	declaring	and	initializing	the
+loop	control 	variable	inside	a	traditional 	for	loop,	or	when	specifying	the
+iteration	variable	in	a	for-each	for. 
