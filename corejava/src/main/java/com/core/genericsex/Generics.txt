@@ -1,0 +1,39 @@
+The General Form of a Generic Class
+The genrerics syntax shown in the preceding examples can be generalized. Here is the syntax for declaring a generics class:
+class class-name<type-param-list>{//...}
+Here is the full syntax for declaring a reference to a generic class and instance creation:
+class-name<type-param-list> var-name = new class-name<type-param-list>(cons-arg-list);
+
+Java provides bounded types:
+When specifying a type parameter, you can create an upper bound that declares the superclass from which all type arguments must be derived. This is accomplished through the use of an extends clause when specifying the type parameter, as shown here:
+<T extends superclass>
+This specifies that T can only be replaced by superclass, or subclasses of superclass. Thus, superclass defines an inclusive, upper limit.
+
+The wildcard argument:
+The wildcard argument is specified by the ?, and it represents an unknown type.
+
+Bounded wildcard:
+<? extends Number>
+
+Generic Constructors:
+It is possible for constructors to be generic, even if their class is not.
+Ex:
+class GenCons{
+	private double val;
+	<T extends Number> GenCons(T arg){
+		val = arg.doubleValue();
+	}
+}
+
+Generic Interfaces:
+In addition to generic classes and methods, you cal also have generic interfaces. 
+Ex:
+interface MinMax<T extends Comparable<T>>{
+	T min();
+	T max();
+}
+
+class MyClass<T extends Comparable<T>> implements MaxMin<T>{
+	T[] vals;
+	MyClass(T[] o){ vals = o;}
+}
