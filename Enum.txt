@@ -1,0 +1,70 @@
+enum Apple{
+	Jonathan, GoldenDel, RedDel, Winesap, Cortland
+}
+//The identifiers Jonathan, GoldenDel, and so on, are called enumeration constants.
+//Each is implicitly declared as public, static, final member of Apple.
+//Once you have defined an enumeration, you can create a variable of that type.However, even though enumerations
+//define a class type, you do not instantiate an enum using new. Instead, you declare and use an enumeration variable
+//in much the same way as you do one of the primitive types.
+
+Apple ap = Apple.RedDel;
+//Two enumeration constants can be compared for equality by using the == relational operator.
+//An enumeration value can also be used to control a switch statement.
+
+switch(ap){
+	case Jonathan:
+		//...
+	case: Winesap:
+		//...
+}
+
+Notice that	in the case	statements,	the	names of the enumeration	constants	are
+used	without 	being	qualified	by	their	enumeration	type	name.	That 	is,
+Winesap,	not 	Apple. Winesap,	is	used.	This	is	because	the	type of	the
+enumeration	in	the	switch	expression	has	already	implicitly	specified	the	enum
+type of	the	case	constants.	There	is	no	need	to	qualify	the	constants	in	the	case
+statement swith	their	enum	type	name.	In	fact ,	attempting	to	do	so	will 	cause	a
+compilation	error.
+
+All the enumerations automatically contain two predefined methods: values and valueOf().
+public	static	enum-type[]	values(	)
+public	static	enum-typevalueOf(String	str)
+
+Apple apples[] = Apple.values();
+for(Apple a: apples)
+	System.out.println(a);
+	
+ap = Apple.valueOf("Winesap");
+
+It is important to understand that each enumeration constant is an object of its enumeration type. Thus when you
+define a constructor for an enum, the constructor is called when each enumeration constant is created. Also
+each enumeration constant has its own copy of any instance variables defined by the enumeration.
+
+//Use an enum constructor, instance variable, and method
+enum Apple{
+	Jonathan(10), GoldenDel(9), RedDel(12), Winesap(15), Cortland(8);
+	
+	private int price;
+	
+	Apple(int p){
+		price = p;
+	}
+	
+	int getPrice(){
+		return price;
+	}
+}
+
+class Test{
+	main(String[] args){
+		Apple.Winesap.getPrice();
+		for(Apple ap: Apple.values())
+			Apple.getPrice();
+	}
+}
+
+Here	are	two	restrictions	that 	apply	to	enumerations.	First ,	an	enumeration
+can’t 	inherit 	another	class.	Second,	an	enum	cannot 	be	a	superclass.	This
+means	that 	an	enum	can’t 	be	extended.	Otherwise,	enum	acts	much	like	any
+other	class	type.	The	key	is	to	remember	that 	each	of	the	enumeration	constants
+is	an	object 	of	the	class	in	which	it 	is	defined.
