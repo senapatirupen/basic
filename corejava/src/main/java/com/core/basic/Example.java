@@ -4,7 +4,7 @@ public class Example {
 
 	public static void main(String[] args) {
 		System.out.println("This is a smaple program");
-//		forEachTest();
+		forEachTest();
 //		switchTest();
 //		avarage();
 //		numCalc1();
