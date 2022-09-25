@@ -1,6 +1,6 @@
 Abstract Factory Design Pattern
 -------------------------------
-Abstract Factory design pattern is one of the creational pattern. Abstract Factory pattern is almost similiar to Factory Pattern except the fact that its more like factory of factories.
+Abstract Factory design pattern is one of the creational pattern. Abstract Factory pattern is almost similar to Factory Pattern except the fact that its more like factory of factories.
 
 public abstract class Flight {
     public abstract String getSpeed();
